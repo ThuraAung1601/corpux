@@ -1,3 +1,8 @@
+// Ref: Kasitphoom Thowongs, "WhatLanguage", Link: https://github.com/Kasitphoom/ELEMENTARY_SYSTEM_PROGRAMMING/tree/master/22.10.11
+// Added more languages
+// Solved Unknown Panic case
+// Calculated percentage of languages included
+
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, Copy, Eq, Hash, PartialEq)]
