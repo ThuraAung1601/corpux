@@ -24,14 +24,16 @@ $ cargo run -- --help
 
 ## Features
 
-#### For ONE corpus file analysis
+#### for ONE corpus file analysis
 - **Basic text analysis** for each .txt file and text cleaning before it
 - **Read and Count** the number of words, lines, and unique words
 - **Language Identification** by percentages included in the txt file based on unicode character count
-- **Ngram**: generate an n-gram of the file
 - **Report Generation**: an HTML report for each .txt file - with a Count table and language percentage bar graph
+- **Corpus Statistics**
+  - **Ngram**: generate an n-gram of the file
+  - **Word Frequency**: make frequency table and give output as .csv file
 
-#### For FOLDER analysis
+#### for FOLDER analysis
 - Loop all of the .txt files under the folder and generate a report with file information
 
 ## Usage
