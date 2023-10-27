@@ -27,11 +27,11 @@ $ cargo run -- --help
 #### for ONE corpus file analysis
 - **Basic text analysis** for each .txt file and text cleaning before it
 - **Read and Count** the number of words, lines, and unique words
-- **Language Identification** by percentages included in the txt file based on unicode character count
-- **Report Generation**: an HTML report for each .txt file - with a Count table and language percentage bar graph
+- **Language Identification** by percentages included in the txt file based on Unicode character count
+- **Report Generation**: generate an HTML report for each .txt file - with a Count table and language percentage bar graph
 - **Corpus Statistics**
   - **Ngram**: generate an n-gram of the file
-  - **Word Frequency**: make frequency table and give output as .csv file
+  - **Word Frequency**: make a frequency table and give output as .csv file
 
 #### for FOLDER analysis
 - Loop all of the .txt files under the folder and generate a report with file information
@@ -92,7 +92,7 @@ Report saved to report_folder.html
 The following is the screenshot of the generated report_folder.html
 ![screenshot file](./images/report_ss2.png "Screenshot of the generated report.html for the folder")
 
-#### Corpus statistics for specific text file
+#### Corpus statistics for a specific text file
 ##### Word frequency table
 ```
 cargo run -- test2.txt -m frequency
@@ -124,7 +124,7 @@ $ cat test2.txt
 ```
 $ cargo run -- test2.txt -m ngram -n 2
 ```
-The following is bi-gram file
+The following is the bi-gram file
 ```
 $ head -5 2-gram_file.txt 
   Corporate bonds
@@ -138,7 +138,7 @@ $ head -5 2-gram_file.txt
 ```
 $ cargo run -- test2.txt -m ngram -n 3
 ```
-The following is tri-gram file
+The following is the tri-gram file
 ```
 $ head -5 3-gram_file.txt
   Corporate bonds offer
@@ -173,3 +173,9 @@ test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 - Unicode Character Ranges, Linguistics 538, Computational Methods in Linguistic Research, Link: https://www.ling.upenn.edu/courses/Spring_2003/ling538/UnicodeRanges.html
 - Dave MacLeod, "Easy Rust", Github Pages, Link: https://dhghomon.github.io/easy_rust
 - Kasitphoom Thowongs, "What Language is that?", Github: https://github.com/Kasitphoom/ELEMENTARY_SYSTEM_PROGRAMMING/blob/master/22.10.11/WhatLanguage_report_65011328.pdf
+
+## Conclusion
+- All codes, including test cases, are done by myself and properly cite the references. 
+- No external crate, except clap for CLI, was used in the project. 
+- I would like to add that all pieces of information (like Unicode ranges used) are also correct.
+- We can extend this mini-project to the corpus analysis library by adding more functions for linguistics features like Part-Of-Speech Tagging.
