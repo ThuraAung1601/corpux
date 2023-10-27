@@ -76,7 +76,7 @@ $ cargo run -- test.txt -m generate
 Report saved to report.html
 ```
 The following is the screenshot of the generated report.html
-![screenshot file](./images/report_ss1.png "Screenshot of the generated report.html for a corpus").
+![screenshot file](./images/report_ss1.png "Screenshot of the generated report.html for a corpus")
 
 ```
 $ cargo run -- -l txt_files -m generate
@@ -86,4 +86,4 @@ Report saved to report_folder.html
 ```
 
 The following is the screenshot of the generated report_folder.html
-![screenshot file](./images/report_ss2.png "Screenshot of the generated report.html for the folder").
+![screenshot file](./images/report_ss2.png "Screenshot of the generated report.html for the folder")
