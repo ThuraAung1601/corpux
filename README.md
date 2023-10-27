@@ -72,7 +72,6 @@ cargo run -- <input-file> -m ngram -n <n-value>
 ## Demonstration 
 
 #### Report generation
-
 ```
 $ cargo run -- test.txt -m generate   
     Finished dev [unoptimized + debuginfo] target(s) in 0.05s
@@ -91,6 +90,8 @@ Report saved to report_folder.html
 
 The following is the screenshot of the generated report_folder.html
 ![screenshot file](./images/report_ss2.png "Screenshot of the generated report.html for the folder")
+
+***Note***: replace_invalid_utf8 function and preprocessor::clean_text function will replace invalid utf8 and clean non-unicode characters so that there could be some differences in data statistics if we use **wc** command to check the contents. But manual checking has already done for those steps.
 
 #### Corpus statistics for a specific text file
 ##### Word frequency table
