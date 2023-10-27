@@ -1,12 +1,3 @@
-// Ref: Kasitphoom Thowongs, "What Language is that?", Link: https://github.com/Kasitphoom/ELEMENTARY_SYSTEM_PROGRAMMING/blob/master/22.10.11/WhatLanguage_report_65011328.pdf
-// Modifications of P' Phoom's program made for the project:
-    // [1] Refactor as a utility function
-    // [2] Added 50 more languages + 1 for Unknown case
-    // [3] Solved panic cases for Unknown characters
-    // [4] Calculated the total numbers as well as the percentage of characters for each language included
-    // [5] Passed the information as a struct instead of printing out the results
-    // [6] Added unit test to verify the language detection function
-
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, Copy, Eq, Hash, PartialEq)]
