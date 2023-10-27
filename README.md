@@ -150,7 +150,7 @@ $ head -5 3-gram_file.txt
 
 We can generate to N-gram as long as we have enough sentence length.
 
-#### Test
+## Test
 - Unit tests for each utility function
 ```
 $ cargo test 
