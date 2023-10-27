@@ -1,8 +1,3 @@
-// Ref: Kasitphoom Thowongs, "WhatLanguage", Link: https://github.com/Kasitphoom/ELEMENTARY_SYSTEM_PROGRAMMING/tree/master/22.10.11
-// Added more languages
-// Solved Unknown Panic case
-// Calculated percentage of languages included
-
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, Copy, Eq, Hash, PartialEq)]
@@ -77,6 +72,7 @@ pub struct LangType {
     text: String,
 }
 
+#[derive(Debug)]
 pub struct LangInfo {
     pub lang: String,
     pub total_character: usize,
@@ -281,4 +277,19 @@ pub fn lang_detect(lines: Vec<String>) -> Vec<LangInfo> {
     }
     
     lang_info
+}
+
+#[test]
+fn test_lang_detect() {
+    let input_lines = vec![
+        "This is a test sentence in English".to_string()
+    ];
+
+    let lang_info = lang_detect(input_lines);
+
+    assert_eq!(lang_info.len(), 1);
+    let english_info = &lang_info[0];
+
+    assert_eq!(english_info.lang, "English");
+    assert_eq!(english_info.total_character, 28);
 }
