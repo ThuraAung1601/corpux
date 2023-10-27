@@ -1,5 +1,5 @@
 # CorpuX: Text corpus analysis tool
-
+Thura Aung, email: 66011606@kmitl.ac.th
 ```
 $ cargo run -- --help
   CorpuX: Text corpus analysis tool 1.0
@@ -170,6 +170,6 @@ test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 ```
 
 ## References
-- Unicode Character Ranges, "Linguistics 538, Computational Methods in Linguistic Research", Link: https://www.ling.upenn.edu/courses/Spring_2003/ling538/UnicodeRanges.html
+- Unicode Character Ranges, Linguistics 538, Computational Methods in Linguistic Research, Link: https://www.ling.upenn.edu/courses/Spring_2003/ling538/UnicodeRanges.html
 - Dave MacLeod, "Easy Rust", Github Pages, Link: https://dhghomon.github.io/easy_rust
 - Kasitphoom Thowongs, "What Language is that?", Github: https://github.com/Kasitphoom/ELEMENTARY_SYSTEM_PROGRAMMING/blob/master/22.10.11/WhatLanguage_report_65011328.pdf
