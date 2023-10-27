@@ -111,10 +111,20 @@ $ head -5 word_frequencies.csv
   minimize,1
 ```
 #### N-gram generation
+Sample corpus
+```
+$ cat test2.txt 
+  Corporate bonds offer a slightly higher yield compared to government bonds. 
+  However, they come with a moderate level of risk associated with the financial stability of the issuing company. 
+  In your case, as you are nearing retirement, you can consider investing in highly-rated corporate bonds to 
+  potentially earn a bit more than government bonds while maintaining a reasonable level of safety. Ensure you select bonds from reputable, financially stable companies to minimize credit risk.                                          
+```
+
 **Bi-gram** 
 ```
 $ cargo run -- test2.txt -m ngram -n 2
 ```
+The following is bi-gram file
 ```
 $ head -5 2-gram_file.txt 
   Corporate bonds
@@ -128,6 +138,7 @@ $ head -5 2-gram_file.txt
 ```
 $ cargo run -- test2.txt -m ngram -n 3
 ```
+The following is tri-gram file
 ```
 $ head -5 3-gram_file.txt
   Corporate bonds offer
@@ -137,7 +148,9 @@ $ head -5 3-gram_file.txt
   slightly higher yield
 ```
 
-#### Appendix
+We can generate to N-gram as long as we have enough sentence length.
+
+#### Test
 - Unit tests for each utility function
 ```
 $ cargo test 
@@ -155,3 +168,8 @@ test utils::lang_detect::test_lang_detect ... ok
 
 test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
 ```
+
+## References
+- Unicode Character Ranges, Linguistics 538, Computational Methods in Linguistic Research, Link: https://www.ling.upenn.edu/courses/Spring_2003/ling538/UnicodeRanges.html
+- Dave MacLeod, Easy Rust, Github Pages, Link: https://dhghomon.github.io/easy_rust
+- Kasitphoom Thowongs, "What Language is that?", Github: https://github.com/Kasitphoom/ELEMENTARY_SYSTEM_PROGRAMMING/blob/master/22.10.11/WhatLanguage_report_65011328.pdf
