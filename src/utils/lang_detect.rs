@@ -1,74 +1,26 @@
 // Ref: Kasitphoom Thowongs, "What Language is that?", Link: https://github.com/Kasitphoom/ELEMENTARY_SYSTEM_PROGRAMMING/blob/master/22.10.11/WhatLanguage_report_65011328.pdf
 // Modifications made for the project:
-    // Refactor as a utility function
-    // Added more languages
-    // Solved panic case for Unknown characters in P' Phoom's program
-    // Calculated total numbers as well as percentage of characters for each language included
-    // Added unit test to verify the language detection function
+    // [1] Refactor as a utility function
+    // [2] Added more languages
+    // [3] Solved panic case for Unknown characters in P' Phoom's program
+    // [4] Calculated the total numbers as well as the percentage of characters for each language included
+    // [5] Passed the information as a struct instead of printing out the results
+    // [6] Added unit test to verify the language detection function
 
 use std::collections::HashMap;
 
 #[derive(Debug, Clone, Copy, Eq, Hash, PartialEq)]
 pub enum Lang {
-    English,
-    Spanish,
-    French,
-    German,
-    ChineseSimplified,
-    Japanese,
-    Russian,
-    Arabic,
-    Portuguese,
-    Italian,
-    Dutch,
-    Swedish,
-    Korean,
-    Turkish,
-    Greek,
-    Hindi,
-    Vietnamese,
-    Finnish,
-    Norwegian,
-    Danish,
-    Romanian,
-    Polish,
-    Hungarian,
-    Hebrew,
-    Thai,
-    Czech,
-    Serbian,
-    Filipino,
-    Ukrainian,
-    Malay,
-    Bengali,
-    Swahili,
-    Persian,
-    Afrikaans,
-    Bulgarian,
-    Croatian,
-    Slovenian,
-    Estonian,
-    Icelandic,
-    Kurdish,
-    Urdu,
-    Tamil,
-    PunjabiGurmukhi,
-    Kannada,
-    Amharic,
-    Nepali,
-    Yoruba,
-    Zulu,
-    Uzbek,
-    Sinhala,
-    Belarusian,
-    Azerbaijani,
-    Javanese,
-    Burmese,
-    AccentedLatin,
-    Telugu,
-    Malayalam,
-    Unknown,
-    Ascii,
+    English, Spanish, French, German, ChineseSimplified,
+    Japanese, Russian, Arabic, Portuguese, Italian, Dutch, Swedish, Korean,
+    Turkish, Greek, Hindi, Vietnamese, Finnish, Norwegian, Danish,
+    Romanian, Polish, Hungarian, Hebrew, Thai, Czech,
+    Serbian, Filipino, Ukrainian, Malay, Bengali,
+    Swahili, Persian, Afrikaans, Bulgarian, Croatian, Slovenian, Estonian,
+    Icelandic, Kurdish, Urdu, Tamil, PunjabiGurmukhi,
+    Kannada, Amharic, Nepali, Yoruba, Zulu, Uzbek, Sinhala, Belarusian,
+    Azerbaijani, Javanese, Burmese, AccentedLatin, Telugu, Malayalam,
+    Unknown, Ascii,
 }
 
 #[allow(dead_code)]
