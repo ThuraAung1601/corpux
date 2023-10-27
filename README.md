@@ -71,6 +71,8 @@ cargo run -- <input-file> -m ngram -n <n-value>
 
 ## Demonstration 
 
+#### Report generation
+
 ```
 $ cargo run -- test.txt -m generate   
     Finished dev [unoptimized + debuginfo] target(s) in 0.05s
@@ -89,3 +91,67 @@ Report saved to report_folder.html
 
 The following is the screenshot of the generated report_folder.html
 ![screenshot file](./images/report_ss2.png "Screenshot of the generated report.html for the folder")
+
+#### Corpus statistics for specific text file
+##### Word frequency table
+```
+cargo run -- test2.txt -m frequency
+   Compiling corpux v0.1.0 (/Users/thuraaung/Desktop/KMITL_courseworks/project/corpux)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.78s
+     Running `target/debug/corpux test2.txt -m frequency`
+Word frequencies saved to word_frequencies.csv
+```
+The following is the result 
+```
+$ head -5 word_frequencies.csv
+  Word,Frequency
+  companies,1
+  stable,1
+  level,2
+  minimize,1
+```
+#### N-gram generation
+**Bi-gram** 
+```
+$ cargo run -- test2.txt -m ngram -n 2
+```
+```
+$ head -5 2-gram_file.txt 
+  Corporate bonds
+  bonds offer
+  offer a
+  a slightly
+  slightly higher
+```
+
+**Tri-gram** 
+```
+$ cargo run -- test2.txt -m ngram -n 3
+```
+```
+$ head -5 3-gram_file.txt
+  Corporate bonds offer
+  bonds offer a
+  offer a slightly
+  a slightly higher
+  slightly higher yield
+```
+
+#### Appendix
+- Unit tests for each utility function
+```
+$ cargo test 
+   Compiling corpux v0.1.0 (/Users/thuraaung/Desktop/KMITL_courseworks/project/corpux)
+    Finished test [unoptimized + debuginfo] target(s) in 0.24s
+     Running unittests src/main.rs (target/debug/deps/corpux-25e72c67c737876b)
+
+running 6 tests
+test utils::ngram::test_generate_ngrams_insufficient_length ... ok
+test utils::counter::test_counter ... ok
+test utils::ngram::test_generate_ngrams ... ok
+test utils::word_freq::test_word_frequency_empty_input ... ok
+test utils::word_freq::test_word_frequency ... ok
+test utils::lang_detect::test_lang_detect ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+```
