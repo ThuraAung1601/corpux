@@ -23,9 +23,20 @@ $ cargo run -- --help
 ```
 
 ## Content
-- [Features](##Features)
-- [ONE corpus file analysis](####for-ONE-corpus-file-analysis)
-
+- [Features](#Features)
+  - [ONE corpus file analysis](#for-ONE-corpus-file-analysis)
+  - [FOLDER analysis](#FOLDER-analysis)
+- [Usage](#Usage)
+- [Demonstration](#Demonstration)
+  - [Report Generation](#Report-Generation)
+  - [Corpus statistics for a specific text file](#Corpus-statistics-for-a-specific-text-file)
+    - [Word frequency table](#Word-frequency-table)
+    - [N-gram generation](#N-gram-generation)
+- [Implementation](#Implementation)
+- [Test](#Usage)
+- [Reference](#Reference)
+- [Conclusion](#Conclusion)
+  
 ## Features
 
 #### for ONE corpus file analysis
@@ -179,7 +190,6 @@ test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 ## References
 - Unicode Character Ranges, Linguistics 538, Computational Methods in Linguistic Research, Link: https://www.ling.upenn.edu/courses/Spring_2003/ling538/UnicodeRanges.html
 - Dave MacLeod, "Easy Rust", Github Pages, Link: https://dhghomon.github.io/easy_rust
-- Kasitphoom Thowongs, "What Language is that?", Github: https://github.com/Kasitphoom/ELEMENTARY_SYSTEM_PROGRAMMING/blob/master/22.10.11/WhatLanguage_report_65011328.pdf
 
 ## Conclusion
 - All codes, including test cases, are done by myself and properly cite the references. 
