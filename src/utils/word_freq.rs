@@ -1,6 +1,7 @@
 use std::collections::HashMap;
 
 pub fn word_frequency(lines: Vec<String>) -> HashMap<String, usize> {
+    // Word frequency analysis and HashMap construction
     let mut word_frequencies: HashMap<String, usize> = HashMap::new();
     for line in &lines {
         for word in line.split_whitespace() {
