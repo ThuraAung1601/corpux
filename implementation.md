@@ -123,23 +123,6 @@ The `clean_text` function is employed to prepare text data for analysis by elimi
   - `line_count` (type: `usize`): The total count of lines in the input text.
   - `unique_word_count` (type: `usize`): The count of unique words in the input text.
 
-### Example Usage
-```rust
-fn main() {
-    let input_lines = vec![
-        "This is a sample sentence.".to_string(),
-        "Another sentence for testing.".to_string(),
-        "This is a sample sentence.".to_string(),
-    ];
-
-    let counts = counter(input_lines);
-
-    println!("Word Count: {}", counts.word_count);
-    println!("Line Count: {}", counts.line_count);
-    println!("Unique Word Count: {}", counts.unique_word_count);
-}
-```
-
 ### `test_counter` Test Function
 - **Description**: This test function validates the `counter` function by providing a set of input lines and checking whether it produces the expected counts.
 - **Input**:
@@ -176,7 +159,9 @@ fn main() {
   - Multiple SVG files named after the provided `file_names` with `.svg` extension.
 
 These functions are responsible for generating HTML tables and SVG visualizations to represent the data statistics and language information.
+
 ---
+
 ## Language Detection Module
 ```lang_detect.rs```
 
@@ -226,6 +211,7 @@ These functions are responsible for generating HTML tables and SVG visualization
 These functions and structures are used to detect the language of text data and provide information about the detected languages, such as character counts and percentages.
 
 --- 
+
 ## Ngram Generation Module
 ```ngram.rs```
 
