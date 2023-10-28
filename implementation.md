@@ -2,13 +2,13 @@
 
 ## Table of contents
 
-- [Configuration](#Configuration-(```main.rs```))
-- [Preprocessor Module](#Preprocessor-Module-(```preprocessor.rs```))
+- [Configuration](#Configuration)
+- [Preprocessor Module](#Preprocessor-Module)
 - [Counter-Module](#Counter-Module)
 
 ---
 
-## Configuration (```main.rs```)
+## Configuration 
 The ```main.rs``` file is responsible for handling command-line arguments and configuring the application. 
 It defines an AppConfig struct to store the user's input parameters, such as input path, analysis mode, and n-value for n-gram analysis.
 
@@ -78,8 +78,8 @@ Here's the documentation for the functions based on the provided code:
 
 --- 
 
-## Preprocessor Module (```preprocessor.rs```)
-The `preprocessor` module plays a crucial role in text preprocessing, cleaning, and character encoding. It ensures that the input text data is properly formatted and prepared for analysis. This module contains functions that handle various aspects of text data preparation. The notable functions within this module are `clean_text` and `is_text_file`.
+## Preprocessor Module 
+The preprocessor (```preprocessor.rs```) module plays a crucial role in text preprocessing, cleaning, and character encoding. It ensures that the input text data is properly formatted and prepared for analysis. This module contains functions that handle various aspects of text data preparation. The notable functions within this module are `clean_text` and `is_text_file`.
 
 #### Functions
 ##### `clean_text(input_text: &str) -> String`
@@ -101,7 +101,8 @@ The result is a cleaned and normalized text string ready for further analysis.
 The `clean_text` function is employed to prepare text data for analysis by eliminating non-Unicode characters and normalizing whitespace, which is an essential step in ensuring that the text analysis results are accurate and consistent.
 
 --- 
-## Counter Module (```counter.rs```)
+## Counter Module 
+(```counter.rs```)
 ### `counter` Function
 - **Description**: This function counts the number of words, lines, and unique words in a collection of text lines. It is used for basic text analysis.
 - **Parameters**:
