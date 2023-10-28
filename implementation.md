@@ -102,7 +102,7 @@ The `clean_text` function is employed to prepare text data for analysis by elimi
 
 --- 
 ## Counter Module 
-(```counter.rs```)
+```counter.rs```
 ### `counter` Function
 - **Description**: This function counts the number of words, lines, and unique words in a collection of text lines. It is used for basic text analysis.
 - **Parameters**:
@@ -140,3 +140,118 @@ fn main() {
   - `input_lines` (type: `Vec<String>`): A set of sample text lines for testing.
 - **Assertions**:
   - Checks that the word count, line count, and unique word count produced by the `counter` function match the expected values.
+---
+
+## Generators Module
+```generators.rs```
+### `generate_html_table` Function
+- **Description**: This function generates an HTML table displaying data statistics of text files. It shows counts like word count, unique words, and line count for multiple text files.
+- **Parameters**:
+  - `count` (type: `&[Counts]`): A slice of `Counts` structures containing the statistics for each text file.
+  - `file_names` (type: `&[String]`): A slice of file names corresponding to the text files.
+- **Returns**:
+  - An HTML table as a string containing the data statistics.
+
+### `generate_svg` Function
+- **Description**: This function generates an SVG bar chart displaying language information such as character counts and percentages.
+- **Parameters**:
+  - `lang` (type: `&[String]`): A slice of language names.
+  - `char_vec` (type: `&[usize]`): A slice of character counts corresponding to each language.
+  - `percent_vec` (type: `&[f64]`): A slice of percentage values corresponding to each language.
+- **Returns**:
+  - An SVG bar chart as a string.
+
+### `generate_many_svgs` Function
+- **Description**: This function generates multiple SVG files, each containing a bar chart for different language data.
+- **Parameters**:
+  - `lang_infos` (type: `Vec<Vec<LangInfo>>`): A vector of language information for each file, where `LangInfo` contains language name, character count, and percentage.
+  - `file_names` (type: `Vec<String>`): A vector of file names to save the SVG charts.
+- **Output**:
+  - Multiple SVG files named after the provided `file_names` with `.svg` extension.
+
+These functions are responsible for generating HTML tables and SVG visualizations to represent the data statistics and language information.
+---
+## Language Detection Module
+```lang_detect.rs```
+
+### `Lang` Enum
+- **Description**: This is an enumeration representing different languages. It includes various languages, each associated with a language code.
+
+### `LangType` Struct
+- **Description**: A structure that associates a language from the `Lang` enum with Unicode character range boundaries and the language's name.
+- **Fields**:
+  - `lang` (type: `Lang`): The language represented by this entry.
+  - `uniup` (type: `u64`): The upper boundary of the Unicode character range associated with the language.
+  - `unidown` (type: `u64`): The lower boundary of the Unicode character range associated with the language.
+  - `text` (type: `String`): The name of the language.
+
+### `LangInfo` Struct
+- **Description**: A structure that contains information about a detected language. It includes the language name, total character count, and percentage.
+- **Fields**:
+  - `lang` (type: `String`): The name of the detected language.
+  - `total_character` (type: `usize`): The total character count for the language.
+  - `percentage` (type: `f64`): The percentage of characters in the text that belong to this language.
+
+### `find_unicode` Function
+- **Description**: This function takes a character and identifies its associated language using the provided `LangType` information and Unicode character range boundaries.
+- **Parameters**:
+  - `langtype` (type: `[LangType; 59]`): An array of `LangType` structures that define the Unicode character ranges for different languages.
+  - `c` (type: `char`): The character to be identified.
+- **Returns**:
+  - The detected language from the `Lang` enum.
+
+### `return_lang` Function
+- **Description**: This function converts a `Lang` enum value into a human-readable language name as a string.
+- **Parameters**:
+  - `lang` (type: `Lang`): The language to convert.
+- **Returns**:
+  - The name of the language as a string.
+
+### `lang_detect` Function
+- **Description**: This function detects languages in a list of input lines. It calculates the character count and percentage for each language.
+- **Parameters**:
+  - `lines` (type: `Vec<String>`): A vector of input lines to analyze.
+- **Returns**:
+  - A vector of `LangInfo` structures containing information about detected languages, including language name, character count, and percentage.
+
+### `test_lang_detect` Test Function
+- **Description**: This is a test function for the `lang_detect` function. It provides a sample input and asserts the output to validate the language detection logic.
+
+These functions and structures are used to detect the language of text data and provide information about the detected languages, such as character counts and percentages.
+
+--- 
+## N-gram Generation Module
+```ngram.rs```
+
+### `generate_ngrams` Function
+- **Description**: This function generates n-grams from a list of input lines, where an n-gram is a contiguous sequence of n words in the text.
+- **Parameters**:
+  - `lines` (type: `Vec<String>`): A vector of input lines from which n-grams will be generated.
+  - `n` (type: `usize`): The size of n-grams to generate.
+- **Returns**:
+  - A string containing the generated n-grams separated by newlines.
+
+### `test_generate_ngrams` Test Function
+- **Description**: This test function validates the behavior of the `generate_ngrams` function when provided with a sample input. It checks if the function correctly generates n-grams and joins them with newlines.
+
+### `test_generate_ngrams_insufficient_length` Test Function
+- **Description**: This test function checks how the `generate_ngrams` function handles cases where the input lines are not long enough to form n-grams of the specified size (n).
+
+These functions are used for generating n-grams from input text, and the test functions verify their correctness and robustness in handling different input scenarios.
+
+Here's the documentation for the `word_frequency` function and its associated test functions:
+
+### `word_frequency` Function
+- **Description**: This function calculates word frequencies from a list of input lines. Word frequencies represent how many times each unique word appears in the text. The function processes words by removing non-alphabetic characters and converting them to lowercase.
+- **Parameters**:
+  - `lines` (type: `Vec<String>`): A vector of input lines containing text from which word frequencies will be calculated.
+- **Returns**:
+  - A `HashMap` where keys are unique words and values are the frequencies (counts) of each word in the input text.
+
+### `test_word_frequency` Test Function
+**Description**: This test function validates the behavior of the `word_frequency` function when provided with a sample input. It checks if the function correctly calculates word frequencies for the input text.
+
+### `test_word_frequency_empty_input` Test Function
+- **Description**: This test function checks how the `word_frequency` function handles cases where the input vector is empty.
+
+These functions are used for counting word frequencies in input text, and the test functions verify their correctness and their ability to handle empty input gracefully.
