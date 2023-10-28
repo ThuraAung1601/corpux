@@ -14,6 +14,32 @@
 
 ---
 
+The following is the program file structure for the CorpuX project
+```
+.
+├── src
+│   ├── main.rs
+│   ├── txt_files
+│   │   ├── test1.txt
+│   │   ├── test2.txt
+│   │   ├── test3.txt
+│   │   └── test4.txt
+│   └── utils
+│       ├── counter.rs
+│       ├── generators.rs
+│       ├── lang_detect.rs
+│       ├── ngram.rs
+│       ├── preprocessor.rs
+│       ├── txt_files
+│       │   ├── test1.txt
+│       │   ├── test2.txt
+│       │   ├── test3.txt
+│       │   └── test4.txt
+│       └── word_freq.rs
+```
+
+---
+
 ## Configuration 
 The ```main.rs``` file is responsible for handling command-line arguments and configuring the application. 
 It defines an AppConfig struct to store the user's input parameters, such as input path, analysis mode, and n-value for n-gram analysis.
