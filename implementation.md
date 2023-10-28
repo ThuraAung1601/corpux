@@ -29,7 +29,6 @@ These modules are located in the utils folder and include:
 - **generators**: Provides functions to generate HTML tables and SVG visualizations.
 
 #### Functions
-Here's the documentation for the functions based on the provided code:
 
 ##### `report_generator`
 - **Description**: Combines the analysis results to generate an HTML report with count tables and SVG images displaying language information.
@@ -85,7 +84,7 @@ Here's the documentation for the functions based on the provided code:
 --- 
 
 ## Preprocessor Module 
-The preprocessor (```preprocessor.rs```) module plays a crucial role in text preprocessing, cleaning, and character encoding. It ensures that the input text data is properly formatted and prepared for analysis. This module contains functions that handle various aspects of text data preparation. The notable functions within this module are `clean_text` and `is_text_file`.
+The preprocessor (```preprocessor.rs```) module plays a crucial role in text preprocessing, cleaning, and character encoding. It ensures that the input text data is properly formatted and prepared for analysis. This module contains functions that handle various aspects of text data preparation. The functions within this module are `clean_text` and `is_text_file`.
 
 #### Functions
 ##### `clean_text(input_text: &str) -> String`
