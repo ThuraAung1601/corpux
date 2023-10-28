@@ -1,4 +1,5 @@
 # CorpuX: Text corpus analysis tool
+Coursework Individual Project
 Thura Aung, email: 66011606@kmitl.ac.th
 ```
 $ cargo run -- --help
