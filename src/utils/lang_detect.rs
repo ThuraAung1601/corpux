@@ -107,6 +107,8 @@ pub fn return_lang(lang: Lang) -> String {
 }
 
 pub fn lang_detect(lines: Vec<String>) -> Vec<LangInfo> {
+    // Language detection using unicode character ranges
+    
     // make an array of struct for each language
     let langtype = [
         LangType{lang: Lang::English, unidown: 0x0041, uniup: 0x007A, text: "English".to_string()},
