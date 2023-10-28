@@ -98,6 +98,11 @@ cargo run -- <input-file> -m ngram -n <n-value>
 
 ---
 
+## Implementation 
+- For more detailed about implementation, please go to this [link](./implementation.md)
+
+---
+
 ## Demonstration 
 
 #### Report generation
