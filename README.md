@@ -32,7 +32,7 @@ $ cargo run -- --help
   - [Corpus statistics for a specific text file](#Corpus-statistics-for-a-specific-text-file)
     - [Word frequency table](#Word-frequency-table)
     - [N-gram generation](#N-gram-generation)
-- [Implementation](./Implementation.md)
+- [Implementation](./implementation.md)
 - [Test](#Usage)
 - [Reference](#Reference)
 - [Conclusion](#Conclusion)
