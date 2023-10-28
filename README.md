@@ -22,6 +22,8 @@ $ cargo run -- --help
       <input_path>    The input folder or file to analyze
 ```
 
+---
+
 ## Contents
 - [Introduction](#Introduction)
 - [Motivation](#Motivation)
@@ -38,6 +40,8 @@ $ cargo run -- --help
 - [Test](#Usage)
 - [Reference](#Reference)
 - [Conclusion](#Conclusion)
+
+---
 
 ## Introduction
 CorpuX is a tool for analyzing text and determining which languages are being used and how often specific words appear. This tool would be particularly useful for tasks like understanding the diversity of languages in a text or identifying the most common words used in a document.
@@ -92,6 +96,8 @@ cargo run -- <input-file> --mode ngram --nvalue <n-value>
 cargo run -- <input-file> -m ngram -n <n-value>
 ```
 
+---
+
 ## Demonstration 
 
 #### Report generation
@@ -136,7 +142,9 @@ $ head -5 word_frequencies.csv
   level,2
   minimize,1
 ```
+
 ##### N-gram generation
+
 Sample corpus
 ```
 $ cat test2.txt 
