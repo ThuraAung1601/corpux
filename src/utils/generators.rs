@@ -5,6 +5,7 @@ use crate::Counts;
 use crate::LangInfo;
 
 pub fn generate_html_table(count: &[Counts], file_names: &[String]) -> String {
+    // HTML table generation using HTML string
     let mut html: String = String::new();
 
     html.push_str("<h3>Data statistics of the text file(s)</h3>");
@@ -87,6 +88,8 @@ pub fn generate_html_table(count: &[Counts], file_names: &[String]) -> String {
 }
 
 fn generate_svg(lang: &[String], char_vec: &[usize], percent_vec: &[f64]) -> String {
+    // SVG generation for language distribution bar graph
+    
     // Initialize an empty SVG string
     let mut svg = String::new();
 
@@ -158,7 +161,8 @@ fn generate_svg(lang: &[String], char_vec: &[usize], percent_vec: &[f64]) -> Str
 }
 
 pub fn generate_many_svgs(lang_infos: Vec<Vec<LangInfo>>, file_names: Vec<String>) {
-    // generate svg files
+    // Generate svg files for each text file under the folder
+    
     for (lang_ls, file_name) in lang_infos.iter().zip(file_names.iter()) {
         // Separate lang, total char and percentage vectors
         let lang_vec: Vec<String> = lang_ls.iter().map(|info| info.lang.clone()).collect();
