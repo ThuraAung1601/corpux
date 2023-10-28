@@ -6,6 +6,7 @@ use crate::LangInfo;
 
 pub fn generate_html_table(count: &[Counts], file_names: &[String]) -> String {
     // HTML table generation using HTML string
+    
     let mut html: String = String::new();
 
     html.push_str("<h3>Data statistics of the text file(s)</h3>");
