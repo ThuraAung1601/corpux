@@ -1,6 +1,8 @@
 use regex::Regex;
 
 pub fn clean_text(input_text: &str) -> String {
+    // Text cleaning and preprocessing using regular expression
+    
     // take only unicode characters and numbers and white-spaces
     let re = Regex::new(r"[^\p{L}\p{N}\s]+").unwrap();
     let cleaned_text = re.replace_all(input_text, "");
