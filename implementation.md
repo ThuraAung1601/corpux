@@ -19,11 +19,6 @@ The following is the program file structure for the CorpuX project
 .
 ├── src
 │   ├── main.rs
-│   ├── txt_files
-│   │   ├── test1.txt
-│   │   ├── test2.txt
-│   │   ├── test3.txt
-│   │   └── test4.txt
 │   └── utils
 │       ├── counter.rs
 │       ├── generators.rs
