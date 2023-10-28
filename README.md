@@ -207,9 +207,10 @@ test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; fini
 Looking forward, there's a lot of potential to expand this mini-project. It could be developed into a more comprehensive text corpus analysis library, by adding more functions for linguistic analysis, such as Part-Of-Speech Tagging. This expansion could have a significant impact on the field of text analysis and provide exciting opportunities for research and practical applications in linguistics and related areas.
 
 ## Conclusion
-To wrap up this individual project, I want to highlight that I handled all aspects of it by myself. This includes writing all the code and creating test cases. I didn't rely on any external tools or libraries except for "clap," which is used for the Command-Line Interface (CLI). 
-I also want to stress that I took great care to ensure the accuracy of the information used in this project. For instance, the Unicode ranges and language data were thoroughly researched and verified. This attention to detail is crucial for the reliability and precision of the language detection and text analysis tool.
+To wrap up this individual project, I want to highlight that I handled all the code and created test cases. I didn't rely on any external crates except for "clap," which is used for the Command-Line Interface (CLI). 
+I also would like to stress that I took great care to ensure the accuracy of the information used in this project. For instance, the Unicode ranges and language data were thoroughly researched and verified. This attention to detail is crucial for the reliability and precision of the language detection and text analysis tool.
 
 ## References
 - Unicode Character Ranges, Linguistics 538, Computational Methods in Linguistic Research, Link: https://www.ling.upenn.edu/courses/Spring_2003/ling538/UnicodeRanges.html
 - Dave MacLeod, "Easy Rust", Github Pages, Link: https://dhghomon.github.io/easy_rust
+- Ken Youens-Clark, "Command-Line Rust", O'Reilly, 2022, ISBN 9781098109417.
