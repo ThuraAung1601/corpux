@@ -4,6 +4,14 @@ use clap::{App, Arg};
 use std::path::Path;
 use std::collections::HashMap;
 
+// Define a configuration struct for your application
+struct AppConfig {
+    input_path: String,
+    mode: String,
+    is_folder: bool,
+    n_value: Option<usize>,
+}
+
 mod utils {
     pub mod preprocessor;
     pub mod counter;
@@ -36,6 +44,7 @@ fn report_generator(counts: Vec<Counts>, lang_infos: Vec<Vec<LangInfo>>, file_na
 }
 
 fn replace_invalid_utf8(input: &str) -> String {
+    // replace any invalid UTF-8 sequences with the Unicode replacement character (U+FFFD REPLACEMENT CHARACTER)
     let mut encoded = Vec::new();
     
     for c in input.chars() {
@@ -136,7 +145,7 @@ fn process_folder(folder_path: &str, mode: &str, n_value: Option<usize>) -> (Vec
     (counters, lang_infos, file_names)
 }
 
-fn main() {
+fn configure_app() -> AppConfig {
     let matches = App::new("CorpuX: Text corpus analysis tool")
         .version("1.0")
         .author("Thura Aung <66011606@kmitl.ac.th>")
@@ -174,33 +183,50 @@ fn main() {
         )
         .get_matches();
 
-    let input_path = matches.value_of("input_path").unwrap();
-    let mode = matches.value_of("mode").unwrap();
+    let input_path = matches.value_of("input_path").unwrap_or_default().to_string();
+    let mode = matches.value_of("mode").unwrap_or_default().to_string();
     let is_folder = matches.is_present("is_folder");
-    let n_value = matches.value_of("n_value").map(|n| n.parse::<usize>().expect("Invalid 'n' value"));
+    let n_value = matches
+        .value_of("n_value")
+        .and_then(|n| n.parse::<usize>().ok());
 
-    let (counters, lang_infos, file_names) = if is_folder {
-        process_folder(input_path, mode, n_value)
+    AppConfig {
+        input_path,
+        mode,
+        is_folder,
+        n_value,
+    }
+}
+
+fn main() {
+    let config = configure_app();
+
+    let (counters, lang_infos, file_names) = if config.is_folder {
+        process_folder(&config.input_path, &config.mode, config.n_value)
     } else {
         let mut counters = Vec::new();
         let mut lang_infos = Vec::new();
         let mut file_names = Vec::new();
 
-        if let Some((counts, lang_info)) = process_file(input_path, mode, n_value) {
+        if let Some((counts, lang_info)) = process_file(&config.input_path, &config.mode, config.n_value) {
             counters.push(counts);
             lang_infos.push(lang_info);
-            file_names.push(input_path.into());
+            file_names.push(config.input_path.clone());
         }
 
         (counters, lang_infos, file_names)
     };
 
-    if mode == "generate" {
+    if config.mode == "generate" {
         // Generate the report
         let report = report_generator(counters, lang_infos, file_names);
 
         // Define the output HTML file name
-        let output_file_name = "report.html";
+        let output_file_name = if config.is_folder {
+            "report_folder.html"
+        } else {
+            "report.html"
+        };
 
         // Write the report to the HTML file
         let mut output_file = File::create(output_file_name).expect("Failed to create output file");
