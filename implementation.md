@@ -4,7 +4,13 @@
 
 - [Configuration](#Configuration)
 - [Preprocessor Module](#Preprocessor-Module)
-- [Counter-Module](#Counter-Module)
+- [Counter Module](#Counter-Module)
+- [Preprocessor Module](#Preprocessor-Module)
+- [Counter Module](#Counter-Module)
+- [Generators Module](#Generators-Module)
+- [Language Detection Module](#Language-Detection-Module)
+- [Ngram Generation Module](#Ngram-Generation-Module)
+- [Word Frequency Table](#Word-Frequency-Table)
 
 ---
 
@@ -220,7 +226,7 @@ These functions are responsible for generating HTML tables and SVG visualization
 These functions and structures are used to detect the language of text data and provide information about the detected languages, such as character counts and percentages.
 
 --- 
-## N-gram Generation Module
+## Ngram Generation Module
 ```ngram.rs```
 
 ### `generate_ngrams` Function
@@ -239,7 +245,10 @@ These functions and structures are used to detect the language of text data and 
 
 These functions are used for generating n-grams from input text, and the test functions verify their correctness and robustness in handling different input scenarios.
 
-Here's the documentation for the `word_frequency` function and its associated test functions:
+---
+
+## Word Frequency Table
+```word_freq.rs```
 
 ### `word_frequency` Function
 - **Description**: This function calculates word frequencies from a list of input lines. Word frequencies represent how many times each unique word appears in the text. The function processes words by removing non-alphabetic characters and converting them to lowercase.
