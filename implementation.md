@@ -30,12 +30,8 @@ The following is the program file structure for the CorpuX project
 │       ├── lang_detect.rs
 │       ├── ngram.rs
 │       ├── preprocessor.rs
-│       ├── txt_files
-│       │   ├── test1.txt
-│       │   ├── test2.txt
-│       │   ├── test3.txt
-│       │   └── test4.txt
 │       └── word_freq.rs
+.
 ```
 
 ---
