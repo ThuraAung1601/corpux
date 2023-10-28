@@ -22,6 +22,10 @@ $ cargo run -- --help
       <input_path>    The input folder or file to analyze
 ```
 
+## Content
+- [Features](##Features)
+- [ONE corpus file analysis](####for-ONE-corpus-file-analysis)
+
 ## Features
 
 #### for ONE corpus file analysis
@@ -79,6 +83,7 @@ $ cargo run -- test.txt -m generate
 Report saved to report.html
 ```
 The following is the screenshot of the generated report.html
+
 ![screenshot file](./images/report_ss1.png "Screenshot of the generated report.html for a corpus")
 
 ```
@@ -89,6 +94,7 @@ Report saved to report_folder.html
 ```
 
 The following is the screenshot of the generated report_folder.html
+
 ![screenshot file](./images/report_ss2.png "Screenshot of the generated report.html for the folder")
 
 ***Note***: replace_invalid_utf8 function and preprocessor::clean_text function will replace invalid utf8 and clean non-unicode characters so that there could be some differences in data statistics if we use **wc** command to check the contents. But manual checking has already done for those steps.
@@ -121,7 +127,7 @@ $ cat test2.txt
   potentially earn a bit more than government bonds while maintaining a reasonable level of safety. Ensure you select bonds from reputable, financially stable companies to minimize credit risk.                                          
 ```
 
-**Bi-gram** 
+###### Bi-gram
 ```
 $ cargo run -- test2.txt -m ngram -n 2
 ```
@@ -135,7 +141,7 @@ $ head -5 2-gram_file.txt
   slightly higher
 ```
 
-**Tri-gram** 
+###### Tri-gram
 ```
 $ cargo run -- test2.txt -m ngram -n 3
 ```
