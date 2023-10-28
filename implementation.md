@@ -2,8 +2,8 @@
 
 ## Table of contents
 
-- [Configuration](#Configuration)
-- [Preprocessor Module](#Preprocessor-Module)
+- [Configuration](#Configuration-(```main.rs```))
+- [Preprocessor Module](#Preprocessor-Module-(```preprocessor.rs```))
 - [Counter-Module](#Counter-Module)
 
 ---
